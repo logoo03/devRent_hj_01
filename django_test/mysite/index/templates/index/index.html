@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main Page</title>
+</head>
+<body>
+{% if links %}
+    <ul>
+    {% for link in links %}
+        {% if link == '' %}
+            <li><a href=""> / </a></li>
+        {% else %}
+        <li><a href="/{{ link }}/">{{ link }}</a></li>
+        {% endif %}
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No links are available.</p>
+{% endif %}
+</body>
+</html>
